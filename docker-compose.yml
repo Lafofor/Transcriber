@@ -4,7 +4,7 @@ services:
   db:
     image: mcr.microsoft.com/mssql/server:2022-latest
     environment:
-      SA_PASSWORD: "Your_password123"
+      SA_PASSWORD: "Mkk495$"
       ACCEPT_EULA: "Y"
     ports:
       - "1433:1433"
@@ -19,9 +19,10 @@ services:
       - db
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
-      ConnectionStrings__DefaultConnection: "Data Source=localhost;Initial Catalog=495-test;User Id=n.lys;Password=Mkk495$"
+      ConnectionStrings__DefaultConnection: "Server=localhost;Database=495-test;User Id=n.lys;Password=Mkk495$"
+      Jwt__Key: "super_secret_key_123789"
     ports:
-      - "5000:80"
+      - "30322:80"
       - "5001:443"
 
 volumes:
