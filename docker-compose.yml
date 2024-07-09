@@ -11,7 +11,7 @@ services:
     volumes:
       - mssql-data:/var/opt/mssql
 
-  transcriptionservice:
+  transcriber:
     build:
       context: .
       dockerfile: Dockerfile
@@ -22,7 +22,6 @@ services:
       ConnectionStrings__DefaultConnection: "Server=localhost;Database=495-test;User Id=n.lys;Password=Mkk495$"
       Jwt__Key: "super_secret_key_123789"
     ports:
-      - "30322:80"
       - "5001:443"
 
 volumes:
