@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Identity;
 using Transcriber.Interfaces;
 using Transcriber.Models;
 using Transcriber.Services;
+using TranscriberApi.DataBased.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddJsonFile("appsettings.json");
@@ -14,6 +16,8 @@ builder.Configuration.AddJsonFile("appsettings.json");
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<ClientRequestService>(); //add scoped
+
 
 
 builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
