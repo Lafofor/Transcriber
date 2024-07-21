@@ -1,4 +1,5 @@
 ﻿using CommandWrapper.Core.Abstractions;
+using CommandWrapper.Core.Constants;
 using CommandWrapper.Core.Implementations.Formatters;
 using CommandWrapper.Core.Tests.StubImplementations;
 

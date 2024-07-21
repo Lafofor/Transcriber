@@ -6,4 +6,12 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CommandWrapper.Core\CommandWrapper.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Positions\" />
+    </ItemGroup>
+
 </Project>

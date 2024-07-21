@@ -1,6 +1,7 @@
-﻿using CommandWrapper.Core.Implementations.Formatters.LinuxLike;
+﻿using CommandWrapper.Core.Implementations.Formatters;
+using CommandWrapper.Core.Implementations.Formatters.LinuxLike;
 
-namespace CommandWrapper.Core.Implementations.Formatters;
+namespace CommandWrapper.Core.Constants;
 
 /// <summary>
 ///     Статический класс с существующими реализациями форматирования

@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudContact.Api.Tests", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandWrapper.Core.Tests", "Tests\CommandWrapper.Core.Tests\CommandWrapper.Core.Tests.csproj", "{0D2E2665-2923-4CEF-A521-0CD77690284B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandWrapper.Sox.Tests", "Tests\CommandWrapper.Sox.Tests\CommandWrapper.Sox.Tests.csproj", "{80A55434-3DED-424B-8294-5E6D59C909B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,7 @@ Global
 		{233907A4-85D2-4ECE-BCFB-9F27541339C3} = {226E4D15-C861-4A2F-B775-F6D4BCEF4A5C}
 		{BF2C7FE7-517B-4CB0-8D6A-7EB0F9586A44} = {A2CC5407-035C-4BC5-9A22-B72951BD4FA7}
 		{0D2E2665-2923-4CEF-A521-0CD77690284B} = {A2CC5407-035C-4BC5-9A22-B72951BD4FA7}
+		{80A55434-3DED-424B-8294-5E6D59C909B4} = {A2CC5407-035C-4BC5-9A22-B72951BD4FA7}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{636E75E1-A192-41EF-A271-6C230BC9C7DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -59,5 +62,9 @@ Global
 		{0D2E2665-2923-4CEF-A521-0CD77690284B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D2E2665-2923-4CEF-A521-0CD77690284B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D2E2665-2923-4CEF-A521-0CD77690284B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80A55434-3DED-424B-8294-5E6D59C909B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80A55434-3DED-424B-8294-5E6D59C909B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80A55434-3DED-424B-8294-5E6D59C909B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80A55434-3DED-424B-8294-5E6D59C909B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

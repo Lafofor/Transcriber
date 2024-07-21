@@ -7,6 +7,11 @@ namespace CommandWrapper.Core.Abstractions;
 public abstract class Command
 {
     /// <summary>
+    /// Строка с аргументами
+    /// </summary>
+    private string? _arguments;
+    
+    /// <summary>
     ///     Путь к исполняемому файлу
     /// </summary>
     protected readonly string ExecutablePath;
@@ -23,7 +28,7 @@ public abstract class Command
     /// <summary>
     ///     Текущие аргументы команды
     /// </summary>
-    public virtual string Arguments => FormatCommandArguments();
+    public virtual string Arguments => _arguments ??= FormatCommandArguments();
 
     /// <summary>
     ///     Позиции команды
