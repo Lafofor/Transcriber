@@ -5,6 +5,7 @@
 
 # dotenv files
 .env
+.venv
 
 # User-specific files
 *.rsuser
@@ -34,6 +35,7 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+__pycache__
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/

@@ -9,9 +9,9 @@ namespace CommandWrapper.Sox.Types;
 
 public sealed class SoxCommand(string executablePath) : Command(executablePath)
 {
-    private readonly TargetPosition _inputPosition = new TargetPosition(Constants.Priorities.InputFile);
+    private readonly TargetPosition _inputPosition = new TargetPosition(Constants.Priorities.InputFile, "input");
     
-    private readonly TargetPosition _outputPosition = new TargetPosition(Constants.Priorities.OutputFile);
+    private readonly TargetPosition _outputPosition = new TargetPosition(Constants.Priorities.OutputFile, "output");
 
     public readonly GlobalOptionsPosition GlobalOptions = new GlobalOptionsPosition();
     

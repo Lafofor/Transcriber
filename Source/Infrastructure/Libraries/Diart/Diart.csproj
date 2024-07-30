@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="DiartSharp\**\*">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Remove="DiartSharp\__pycache__\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="pythonnet" Version="3.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="DiartSharp\__pycache__\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="DiartSharp\__pycache__\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="DiartSharp\__pycache__\**" />
+    </ItemGroup>
+</Project>
