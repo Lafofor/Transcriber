@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Infrastructure\AudioProcessors\SoxAudioProcessor\SoxAudioProcessor.csproj" />
+      <ProjectReference Include="..\..\Infrastructure\Libraries\CloudContact.Api\CloudContact.Api.csproj" />
+      <ProjectReference Include="..\..\Infrastructure\Libraries\CommandWrapper.Core\CommandWrapper.Core.csproj" />
+      <ProjectReference Include="..\..\Infrastructure\Libraries\CommandWrapper.Sox\CommandWrapper.Sox.csproj" />
+      <ProjectReference Include="..\..\Infrastructure\Libraries\Diart\Diart.csproj" />
+      <ProjectReference Include="..\..\Infrastructure\SpeechRecognitions\WhisperSpeechRecognition\WhisperSpeechRecognition.csproj" />
+      <ProjectReference Include="..\..\Infrastructure\TextProcessors\OllamaTextProcessors\OllamaTextProcessors.csproj" />
+    </ItemGroup>
+
+</Project>

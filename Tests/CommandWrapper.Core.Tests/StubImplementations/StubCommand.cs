@@ -2,7 +2,7 @@
 
 namespace CommandWrapper.Core.Tests.StubImplementations;
 
-public sealed class StubCommand : Command
+public sealed class StubCommand : Command<CommandProcess>
 {
     public StubCommand(string executablePath, SortedSet<CommandPosition> positions) : base(executablePath)
     {

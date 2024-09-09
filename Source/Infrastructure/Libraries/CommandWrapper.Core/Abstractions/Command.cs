@@ -4,7 +4,7 @@ namespace CommandWrapper.Core.Abstractions;
 /// <summary>
 ///     Класс, описывающий команду и ее аргументы
 /// </summary>
-public abstract class Command
+public abstract class Command<TProcess> where TProcess: CommandProcess
 {
     /// <summary>
     /// Строка с аргументами
@@ -39,7 +39,7 @@ public abstract class Command
     ///     Создает процесс команды
     /// </summary>
     /// <returns>Процесс команды</returns>
-    public abstract CommandProcess Run();
+    public abstract TProcess Run();
 
     #region Вспомогательные функции
 

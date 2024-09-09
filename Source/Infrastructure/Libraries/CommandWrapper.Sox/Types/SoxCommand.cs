@@ -7,11 +7,11 @@ using CommandWrapper.Sox.Positions.Target.Arguments;
 
 namespace CommandWrapper.Sox.Types;
 
-public sealed class SoxCommand(string executablePath) : Command(executablePath)
+public sealed class SoxCommand(string executablePath) : Command<SoxProcess>(executablePath)
 {
-    private readonly TargetPosition _inputPosition = new TargetPosition(Constants.Priorities.InputFile, "input");
+    private readonly TargetPosition _inputPosition = new TargetPosition(Constants.Priorities.InputFile);
     
-    private readonly TargetPosition _outputPosition = new TargetPosition(Constants.Priorities.OutputFile, "output");
+    private readonly TargetPosition _outputPosition = new TargetPosition(Constants.Priorities.OutputFile);
 
     public readonly GlobalOptionsPosition GlobalOptions = new GlobalOptionsPosition();
     
@@ -35,8 +35,14 @@ public sealed class SoxCommand(string executablePath) : Command(executablePath)
         Effects
     ];
    
-    public override CommandProcess Run()
+    public override SoxProcess Run()
     {
-        throw new NotImplementedException();
+        return new SoxProcess
+        (
+            Input.FromStream,
+            Output.Path,
+            ExecutablePath,
+            Arguments
+        );
     }
 }

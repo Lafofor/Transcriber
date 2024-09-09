@@ -1,32 +1,50 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.SpeechToTextApi.Areas.v1.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("{area}/{controller}/")]
 public class OperationsController : ControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> ListOperationsAsync(int page = 1, int pageSize = 10, CancellationToken token = default)
+    public IActionResult ListOperationsAsync(uint page = 1, uint pageSize = 10, CancellationToken token = default)
     {
-        return Ok($"Поиск всех");
+        return StatusCode
+        (
+            500,
+            new { Message = "Disabled." }
+        );
     }
     
     [HttpGet("{name}")]
-    public async Task<IActionResult> GetOperationAsync(string name, CancellationToken token = default)
+    public IActionResult GetOperationAsync(string name, CancellationToken token = default)
     {
-        return Ok($"Ищем {name}");
+        return StatusCode
+        (
+            500,
+            new { Message = "Disabled." }
+        );
     }
     
     [HttpPost("{name}:cancel")]
-    public async Task<IActionResult> CancelOperationAsync(string name, CancellationToken token = default)
+    public IActionResult CancelOperationAsync(string name, CancellationToken token = default)
     {
-        return Ok($"Отменяем {name}");
+        return StatusCode
+        (
+            500,
+            new { Message = "Disabled." }
+        );
     }
     
     [HttpDelete("{name}")]
-    public async Task<IActionResult> DeleteOperationAsync(string name, CancellationToken token = default)
+    public IActionResult DeleteOperationAsync(string name, CancellationToken token = default)
     {
-        return Ok($"Удаляем {name}");
+        return StatusCode
+        (
+            500,
+            new { Message = "Disabled." }
+        );
     }
 }

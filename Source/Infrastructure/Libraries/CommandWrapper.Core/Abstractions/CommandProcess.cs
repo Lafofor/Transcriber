@@ -5,7 +5,7 @@ namespace CommandWrapper.Core.Abstractions;
 /// <summary>
 ///     Процесс команды
 /// </summary>
-public abstract class CommandProcess
+public abstract class CommandProcess : IDisposable
 {
     /// <summary>
     ///     Используемые аргументы
@@ -36,26 +36,14 @@ public abstract class CommandProcess
         var startInfo = new ProcessStartInfo
         {
             FileName = executePath,
-            Arguments = arguments
+            Arguments = arguments,
+            RedirectStandardInput = true,
+            RedirectStandardError = true,
+            RedirectStandardOutput = true
         };
 
         CreatedProcess = Process.Start(startInfo) ?? throw new ArgumentNullException(nameof(CreatedProcess));
     }
-
-    /// <summary>
-    ///     Поток входа (stdin)
-    /// </summary>
-    protected internal StreamWriter StandardInput => CreatedProcess.StandardInput;
-
-    /// <summary>
-    ///     Поток выхода (stdout)
-    /// </summary>
-    protected internal StreamReader StandardOutput => CreatedProcess.StandardOutput;
-
-    /// <summary>
-    ///     Поток ошибок (stdout)
-    /// </summary>
-    protected internal StreamReader StandardError => CreatedProcess.StandardError;
 
     /// <summary>
     ///     Полное описание команды

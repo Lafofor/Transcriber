@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Web.SpeechToTextApi.Areas.v1.Controllers;
 
-namespace Web.SpeechToTextApi.Extensions;
+namespace Web.SpeechToTextApi.Areas.v1.Extensions;
 
 public static class ServiceCollectionExtensions
 {

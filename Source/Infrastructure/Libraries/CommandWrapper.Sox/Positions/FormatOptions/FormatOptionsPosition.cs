@@ -1,11 +1,14 @@
 using CommandWrapper.Core.Abstractions;
 using CommandWrapper.Sox.Positions.FormatOptions.Arguments;
+using Type = CommandWrapper.Sox.Positions.FormatOptions.Arguments.Type;
 
 namespace CommandWrapper.Sox.Positions.FormatOptions;
 
 public sealed class FormatOptionsPosition : CommandPosition
 {
     public readonly Rate Rate = new Rate();
+
+    public readonly Type Type = new Type();
     
     internal FormatOptionsPosition(Constants.Priorities priority) : base((int) priority)
     {
@@ -17,6 +20,7 @@ public sealed class FormatOptionsPosition : CommandPosition
 
     protected override IEnumerable<CommandArgument>? Arguments =>
     [
-        Rate
+        Rate,
+        Type
     ];
 }

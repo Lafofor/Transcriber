@@ -5,16 +5,14 @@ namespace CommandWrapper.Sox.Positions.Target.Arguments;
 
 public sealed class TargetArgument : CommandArgument
 {
-    private readonly string _direction;
-    
-    private Stream? _stream;
+    private bool _fromStream;
     
     private string? _path;
 
-    public Stream? Stream
+    public bool FromStream
     {
-        get => _stream;
-        set => SetValue(ref _stream, value);
+        get => _fromStream;
+        set => SetValue(ref _fromStream, value);
     }
     
     public string? Path
@@ -23,9 +21,8 @@ public sealed class TargetArgument : CommandArgument
         set => SetValue(ref _path, value);
     }
     
-    internal TargetArgument(string direction) : base(ArgumentFormatters.Default)
+    internal TargetArgument() : base(ArgumentFormatters.Default)
     {
-        _direction = direction;
     }
 
     protected override string? Name => null;
@@ -34,10 +31,10 @@ public sealed class TargetArgument : CommandArgument
     {
         get
         {
-            if (Path is null && Stream is null)
+            if (Path is null && !FromStream)
                 throw new ArgumentOutOfRangeException("...", "Value not set");
 
-            return _stream is not null ? _direction : Path;
+            return FromStream ? "-" : Path;
         }
     }
 }
